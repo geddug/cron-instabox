@@ -1,0 +1,14 @@
+name: Ping URL Otomatis
+
+on:
+  schedule:
+    # Menjalankan setiap 5 menit (batas tercepat GitHub Actions)
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  hit-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Akses URL Instabox
+        run: curl -s https://9798-agqv2wvjxwltf4irowzwpjfjta.instabox.tech
